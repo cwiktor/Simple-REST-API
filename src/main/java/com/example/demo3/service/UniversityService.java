@@ -20,4 +20,12 @@ public class UniversityService {
     public University getUniversity(long id) {
         return universityRepository.findById(id).orElseThrow();
     }
+
+    public University getUniversityByName(String name){
+        return universityRepository.findByName(name);
+    }
+
+    public University addUniversity(University university) {
+        return universityRepository.save(university);
+    }
 }

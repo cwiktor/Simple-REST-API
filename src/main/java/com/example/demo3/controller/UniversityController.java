@@ -4,9 +4,7 @@ import com.example.demo3.model.University;
 import com.example.demo3.service.UniversityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +23,16 @@ public class UniversityController {
     @GetMapping("/university/{id}")
     public University getUniversity(@PathVariable long id){
         return universityService.getUniversity(id);
+    }
+
+    @GetMapping("/universityName/{name}") // nie moga byc takie same nazwy endpointow :)
+    public University getUniversityByName(@PathVariable String name){
+        return universityService.getUniversityByName(name);
+    }
+
+    @PostMapping("university/add")
+    public University addUniversity(@RequestBody University university){
+        return universityService.addUniversity(university);
     }
 
 
