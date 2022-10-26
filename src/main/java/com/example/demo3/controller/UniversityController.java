@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 @RestController // DZIALA
@@ -25,14 +26,14 @@ public class UniversityController {
         return universityService.getUniversity(id);
     }
 
-    @GetMapping("/universityName/{name}") // nie moga byc takie same nazwy endpointow :)
+    @GetMapping("/universityName/{name}")
     public University getUniversityByName(@PathVariable String name){
         return universityService.getUniversityByName(name);
     }
 
-    @PostMapping("university/add")
-    public University addUniversity(@RequestBody University university){
-        return universityService.addUniversity(university);
+    @PostMapping("/university/add")
+    public void addUniversity(@RequestBody University university){
+        universityService.addUniversity(university);
     }
 
 

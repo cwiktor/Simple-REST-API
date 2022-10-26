@@ -1,6 +1,6 @@
 CREATE TABLE Student(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    id_university BIGINT NOT NULL,
+    id_university BIGINT NULL,
     name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL
 );

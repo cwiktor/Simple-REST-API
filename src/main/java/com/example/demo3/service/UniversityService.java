@@ -25,7 +25,7 @@ public class UniversityService {
         return universityRepository.findByName(name);
     }
 
-    public University addUniversity(University university) {
-        return universityRepository.save(university);
+    public void addUniversity(University university) {
+        universityRepository.save(university);
     }
 }

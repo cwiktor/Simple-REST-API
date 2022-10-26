@@ -23,4 +23,5 @@ public class University {
     @JoinColumn(name ="id_university") //dlaczego ta
     private List<Student> studentList;
 
+
 }

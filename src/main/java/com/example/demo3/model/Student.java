@@ -15,5 +15,8 @@ public class Student {
     private Long id;
     private String name;
     private String last_name;
+    private Long id_university;
+
+
 
 }
