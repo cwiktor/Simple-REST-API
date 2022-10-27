@@ -19,9 +19,17 @@ public class StudentService {
     public void addStudent(Student student){
         studentRepository.save(student);
     }
-
     public void deleteStudent(long id){
         studentRepository.delete(studentRepository.findById(id).orElseThrow());
+    }
+
+    public void updateStudent(long id, String name, String lastname){
+        studentRepository.findById(id).map(student -> {
+            student.setName(name);
+            student.setLast_name(lastname);
+            return studentRepository.save(student);
+        }).orElseThrow();
+
     }
 
 }
