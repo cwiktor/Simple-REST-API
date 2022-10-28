@@ -28,4 +28,18 @@ public class UniversityService {
     public void addUniversity(University university) {
         universityRepository.save(university);
     }
+
+    public void deleteUniversity(long id){
+        universityRepository.delete(universityRepository.findById(id).orElseThrow());
+    }
+
+    public void updateUniversity(long id, String name){
+        universityRepository.findById(id).map(university -> {
+            university.setName(name);
+            return universityRepository.save(university);
+        }).orElseThrow();
+
+    }
+
+
 }

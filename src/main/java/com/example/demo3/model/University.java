@@ -17,7 +17,7 @@ public class University {
 
     @Id
     private long id;
-    String name;
+    private String name;
 
     @OneToMany
     @JoinColumn(name ="id_university") //dlaczego ta

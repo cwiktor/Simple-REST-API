@@ -36,6 +36,17 @@ public class UniversityController {
         universityService.addUniversity(university);
     }
 
+    @DeleteMapping("/university/delete/{id}")
+    public void deleteUniversity(@PathVariable long id){
+        universityService.deleteUniversity(id);
+    }
+
+    @PutMapping("/university/put/{id}")
+    public void updateUniversity(@PathVariable long id, String name){
+        universityService.updateUniversity(id,name);
+    }
+
+
 
 
 
